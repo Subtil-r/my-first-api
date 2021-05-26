@@ -72,3 +72,12 @@ byIng.addEventListener('click', (event) => {
 
 
 
+fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin`)
+    .then(response => response.json())
+    .then((data) => {
+      //loop to show all array elements
+       data.drinks.forEach(() => {
+        let drinkIngredient = `<h3>${data.drinks[i].strDrink}<\h3>`
+        console.log(drinkIngredient)
+       )} 
+    })
