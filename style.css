@@ -26,7 +26,7 @@ body {
 .site_container {
   background-color: var(--light_color); 
   width: 95vw;
-  height: 95vh;
+  height: 95%;
   margin: 25px auto;
   display: flex;
   flex-flow: column;
@@ -144,7 +144,12 @@ header {
 }
 
 .card_drink_inginst {
+  /* background-color: aqua; */
+  width: 100%;
   display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  gap: 10px
 }
 
 .card_drink_inginst > * {
@@ -154,15 +159,15 @@ header {
 .card_drink_ing {
   font-weight: var(--bold_font);
   text-transform: capitalize;
-  font-size: 16px;
-  line-height: 10px;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
 }
 
 .card_drink_inst {
   font-weight: var(--regular_font);
   font-size: 14px;
   text-align: left;
-  padding-right: 10px;
 }
 
 .res_container {

@@ -12,6 +12,20 @@ const lstName = (listName) => {
     .then((data) => {
       //loop to show all array elements
        for(var i = 0; i < data.drinks.length ; i++){
+         let listIng = "";
+         
+         for(var j = 1; j < 16; j++){
+          let keyIng = "strIngredient" + j;
+          let valueIngredient = data.drinks[i][keyIng];
+          let keyQtd = "strMeasure" + j;
+          let valueQtd = data.drinks[i][keyQtd];
+          if (valueIngredient != null){
+            if (valueQtd != null){
+              listIng += valueQtd + " " + valueIngredient + "<br>";
+            }
+          } 
+        }
+
         let drinkCard = `<div class="card_drink">
         <div class="card_drink_nameimg">
          <p class="card_drink_name">${data.drinks[i].strDrink}</p>
@@ -19,14 +33,17 @@ const lstName = (listName) => {
         </div>
         <div class="card_drink_inginst">
           <div class="card_drink_ing">
-           <p >1 qtd Lime</p>
+           <p >${listIng}</p>
           </div>
           <div class="card_drink_inst">
             <p>${data.drinks[i].strInstructions}</p>
           </div>
         </div>
       </div>`
-        console.log(data.drinks[i].strImageSource)
+
+      
+      
+        
         resContainer.insertAdjacentHTML('beforeend', drinkCard)
       } 
     })
@@ -48,10 +65,41 @@ byName.addEventListener('click', (event) => {
       .then(response => response.json())
       .then((data) => {
         //loop to show all array elements
-         for(var i = 0; i < data.drinks.length ; i++){
-          let drinkLetter = `<h3>${data.drinks[i].strDrink}<\h3>`
-          resContainer.insertAdjacentHTML('beforeend', drinkLetter)
-        } 
+        for(var i = 0; i < data.drinks.length ; i++){
+          let listIng = "";
+          
+          for(var j = 1; j < 16; j++){
+           let keyIng = "strIngredient" + j;
+           let valueIngredient = data.drinks[i][keyIng];
+           let keyQtd = "strMeasure" + j;
+           let valueQtd = data.drinks[i][keyQtd];
+           if (valueIngredient != null){
+             if (valueQtd != null){
+               listIng += valueQtd + " " + valueIngredient + "<br>";
+             }
+           } 
+         }
+ 
+         let drinkCard = `<div class="card_drink">
+         <div class="card_drink_nameimg">
+          <p class="card_drink_name">${data.drinks[i].strDrink}</p>
+          <img src="${data.drinks[i].strDrinkThumb}" alt="" class="card_drink_image">
+         </div>
+         <div class="card_drink_inginst">
+           <div class="card_drink_ing">
+            <p >${listIng}</p>
+           </div>
+           <div class="card_drink_inst">
+             <p>${data.drinks[i].strInstructions}</p>
+           </div>
+         </div>
+       </div>`
+ 
+       
+       
+         
+         resContainer.insertAdjacentHTML('beforeend', drinkCard)
+       } 
       })
   
   }
@@ -70,10 +118,41 @@ const lstIngredient = (listIngredient) => {
     .then(response => response.json())
     .then((data) => {
       //loop to show all array elements
-       for(var i = 0; i < data.drinks.length ; i++){
-        let drinkIngredient = `<h3>${data.drinks[i].strDrink}<\h3>`
-        resContainer.insertAdjacentHTML('beforeend', drinkIngredient)
-      } 
+      for(var i = 0; i < data.drinks.length ; i++){
+        let listIng = "";
+        
+        for(var j = 1; j < 16; j++){
+         let keyIng = "strIngredient" + j;
+         let valueIngredient = data.drinks[i][keyIng];
+         let keyQtd = "strMeasure" + j;
+         let valueQtd = data.drinks[i][keyQtd];
+         if (valueIngredient != null){
+           if (valueQtd != null){
+             listIng += valueQtd + " " + valueIngredient + "<br>";
+           }
+         } 
+       }
+
+       let drinkCard = `<div class="card_drink">
+       <div class="card_drink_nameimg">
+        <p class="card_drink_name">${data.drinks[i].strDrink}</p>
+        <img src="${data.drinks[i].strDrinkThumb}" alt="" class="card_drink_image">
+       </div>
+       <div class="card_drink_inginst">
+         <div class="card_drink_ing">
+          <p >${listIng}</p>
+         </div>
+         <div class="card_drink_inst">
+           <p>${data.drinks[i].strInstructions}</p>
+         </div>
+       </div>
+     </div>`
+
+     
+     
+       
+       resContainer.insertAdjacentHTML('beforeend', drinkCard)
+     }  
     })
 
 }
