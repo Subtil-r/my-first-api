@@ -12,8 +12,22 @@ const lstName = (listName) => {
     .then((data) => {
       //loop to show all array elements
        for(var i = 0; i < data.drinks.length ; i++){
-        let drinkName = `<h3>${data.drinks[i].strDrink}<\h3>`
-        resContainer.insertAdjacentHTML('beforeend', drinkName)
+        let drinkCard = `<div class="card_drink">
+        <div class="card_drink_nameimg">
+         <p class="card_drink_name">${data.drinks[i].strDrink}</p>
+         <img src="${data.drinks[i].strDrinkThumb}" alt="" class="card_drink_image">
+        </div>
+        <div class="card_drink_inginst">
+          <div class="card_drink_ing">
+           <p >1 qtd Lime</p>
+          </div>
+          <div class="card_drink_inst">
+            <p>${data.drinks[i].strInstructions}</p>
+          </div>
+        </div>
+      </div>`
+        console.log(data.drinks[i].strImageSource)
+        resContainer.insertAdjacentHTML('beforeend', drinkCard)
       } 
     })
 
@@ -70,14 +84,3 @@ byIng.addEventListener('click', (event) => {
 })
 
 
-
-
-fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin`)
-    .then(response => response.json())
-    .then((data) => {
-      //loop to show all array elements
-       data.drinks.forEach(() => {
-        let drinkIngredient = `<h3>${data.drinks[i].strDrink}<\h3>`
-        console.log(drinkIngredient)
-       )} 
-    })

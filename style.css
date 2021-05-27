@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&display=swap');
+
+:root {
+  --font_type: 'Libre Franklin', sans-serif;
+  --bold_font: 700;
+  --regular_font: 400;
+  --light_color: #EACEE3;
+  --contrast_color: #F15A29;
+  --light_contrast: #ffdcd1;
+  --accent_color: #321C3B;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--contrast_color);
+}
+
+.site_container {
+  background-color: var(--light_color); 
+  width: 95vw;
+  height: 95vh;
+  margin: 25px auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-family: var(--font_type);
+}
+
+.site_container > * {
+  align-self: stretch;
+}
+
+header {
+  font-weight: var(--bold_font);
+  font-variant: small-caps;
+  font-size: 40px;
+  text-align: center;
+  color: var(--contrast_color);
+  /* background-color: yellow; */
+}
+
+.search_container {
+  /* background-color: yellowgreen; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 55px; 
+}
+
+#iptSearch {
+  width: 55%;
+  height: 55px;
+  margin: 0 auto 25px;
+  border: 5px var(--contrast_color) solid;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-weight: var(--bold_font);
+  font-variant: small-caps;
+  font-size: 30px;
+  background-color: var(--light_color);
+  color: var(--contrast_color);
+  text-align: center;
+  transition: 0.5s;
+}
+
+::placeholder {
+  font-variant:normal;
+  font-size: 15px;
+  background-color: var(--light_color);
+  color: rgb(173, 173, 173);
+  text-align: center;
+}
+#iptSearch:focus {
+  font-weight: var(--bold_font);
+  font-variant: small-caps;
+  font-size: 30px;
+  background-color: var(--light_contrast);
+  color: var(--contrast_color);
+  text-align: center;
+}
+
+.search_buttons {
+  background-color: lightpink;
+  display: flex;
+  width: 55%; 
+  /* box-shadow: gray 4px 4px; */
+}
+
+.search_buttons > * {
+  flex: 1 1 100px;
+}
+
+.search_buttons input {
+  height: 55px;
+  border: 5px var(--accent_color) solid;
+  color: var(--accent_color);
+  background-color: var(--light_color);
+  font-weight: var(--regular_font);
+  font-variant: small-caps;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.search_buttons input:hover {
+  
+  color: white;
+  background-color: var(--accent_color);
+  font-weight: var(--bold_font);
+  font-variant: small-caps;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.card_drink {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* width: 100%; */
+  border-radius: 10px;
+  box-shadow: gray 4px 4px;
+  color: var(--accent_color);
+}
+
+.card_drink_name {
+  font-weight: var(--bold_font);
+  text-transform: capitalize;
+  font-variant: small-caps;
+  font-size: 20px;
+}
+
+.card_drink_image {
+  width: 200px;
+  height: auto;
+}
+
+.card_drink_inginst {
+  display: flex;
+}
+
+.card_drink_inginst > * {
+  flex: 1 1 100%;
+}
+
+.card_drink_ing {
+  font-weight: var(--bold_font);
+  text-transform: capitalize;
+  font-size: 16px;
+  line-height: 10px;
+}
+
+.card_drink_inst {
+  font-weight: var(--regular_font);
+  font-size: 14px;
+  text-align: left;
+  padding-right: 10px;
+}
+
+.res_container {
+  /* background-color: aqua; */
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 35px;
+}
+
+.res_container > * {
+  flex: 0 0 30%;
+}
